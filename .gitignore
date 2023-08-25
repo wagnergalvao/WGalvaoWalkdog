@@ -1,0 +1,9 @@
+# ignore files
+*.log
+*screenshot*.*
+log.html
+output.xml
+report.html
+
+# ignore directory
+results/
