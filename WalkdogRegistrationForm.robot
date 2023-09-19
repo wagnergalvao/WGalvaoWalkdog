@@ -20,7 +20,7 @@ ${district_input}         //input[@name='addressDistrict']
 ${city_uf_input}          //input[@name='addressCityUf']
 ${cuidar_img}             //ul[@class='walker-service']//li[1]/img
 ${adestrar_img}           //ul[@class='walker-service']//li[2]/img
-${file_path}              ${EXECDIR}/RG-FAKE-2.jpg
+${file_path}              ${EXECDIR}/resources/RG-FAKE-2.jpg
 ${file_upload_field}      //input[@type='file']
 ${submit_btn}             //button[@class='button-register']
 ${popup_icon}             //div[class='swal2-icon swal2-success swal2-icon-show']
@@ -60,9 +60,10 @@ Preencher Formulário com Dados Válidos
     Click Element    ${submit_btn}
 
 Validar Pop Up de Sucesso
+    Wait Until Element Is Visible    ${popup_icon}
+    Wait Until Element Is Visible    ${popup_title}
+    Wait Until Element Is Visible    ${popup_content}
     Wait Until Element Is Visible    ${popup_confirm_button}
-    Page Should Contain    ${popup_title}
-    Page Should Contain    ${popup_content}
     Capture Page Screenshot    ${TEST NAME}.png
     Click Element    ${popup_confirm_button}
     Wait Until Element Is Enabled    ${join_community_link}
